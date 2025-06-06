@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
-import Head from './components/Head';
-import Sidebar from './components/Sidebar';
+import React from 'react';
 import Body from './components/Body';
+import MainContainer from './components/MainContainer';
+import WatchPage from './components/WatchPage';
+import SearchResultsPage from './components/SearchResultsPage'; // ✅ New component
+import { Provider } from 'react-redux';
+import store from "./utils/store";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Body />, // ✅ Body now contains Head internally
+    children: [
+      {
+        path: "/",
+        element: <MainContainer />
+      },
+      {
+        path: "watch",
+        element: <WatchPage />
+      },
+      {
+        path: "results", // ✅ Search result page
+        element: <SearchResultsPage />
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
-
   return (
-    <div className="relative">
-      <Head toggleSidebar={toggleSidebar} />
-
-      {/* Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} />
-
-      {/* Main content area with dynamic left margin */}
-      <div
-        className={`pt-14 transition-all duration-300 ${
-          isSidebarOpen ? 'ml-64' : 'ml-0'
-        }`}
-      >
-        <Body />
-      </div>
-    </div>
+    <Provider store={store}>
+      <RouterProvider router={appRouter} />
+    </Provider>
   );
 }
 
