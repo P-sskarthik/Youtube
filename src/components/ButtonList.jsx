@@ -11,8 +11,6 @@ const categories = [
   'Computer Science',
   'Tech',
   'Movies',
-  'Trailers',
-  'Comedy',
   'Songs',
   'Education'
 ];
