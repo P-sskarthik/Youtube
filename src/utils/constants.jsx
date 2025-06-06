@@ -5,7 +5,7 @@ export const YOUTUBE_VIDEO_API =
   `part=snippet,contentDetails,statistics` +
   `&chart=mostPopular` +
   `&maxResults=50` +
-  `&regionCode=US` +
+  `&regionCode=IN` +
   `&key=${GOOGLE_API_KEY}`;
 
 export const YOUTUBE_SEARCH_API =
