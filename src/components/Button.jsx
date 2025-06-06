@@ -1,10 +1,9 @@
 import React from 'react';
 
-const Button = ({ label, isActive, onClick }) => {
+const Button = ({ label, isActive }) => {
   return (
     <button
-      onClick={onClick} // ✅ attach handler here
-      className={`px-4 py-1.5 text-sm rounded-lg whitespace-nowrap transition-colors duration-200 ${
+      className={`px-4 py-1 text-sm rounded-lg whitespace-nowrap ${
         isActive
           ? 'bg-white text-black font-semibold'
           : 'bg-neutral-800 text-white hover:bg-neutral-700'
