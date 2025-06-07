@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Button = ({ label, isActive }) => {
+const Button = ({ label, isActive, onClick }) => {
   return (
     <button
+      onClick={onClick}
       className={`px-4 py-1 text-sm rounded-lg whitespace-nowrap ${
         isActive
           ? 'bg-white text-black font-semibold'

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 import { YOUTUBE_SEARCH_API, CORS_PROXY } from '../utils/constants';
-import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -10,7 +10,7 @@ const Head = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // ✅ Initialize navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,25 +42,25 @@ const Head = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-4 py-2 bg-black text-white">
       <div className="flex items-center gap-4">
-        <img onClick={toggleMenuHandler} className="w-6 h-6 cursor-pointer" alt="menu"
-          src="https://www.citypng.com/public/uploads/preview/transparent-hd-white-menu-burger-icon-701751695037039ulxnzxwywi.png" />
+        <img onClick={toggleMenuHandler} className="w-10 h-12 cursor-pointer" alt="menu"
+          src="./M.png" />
         <img
-  className="h-35 w-auto"
-  alt="ZunoTube-logo"
-  src="./Zuno.png"
-/>
+          className="h-10 w-auto"
+          alt="ZunoTube-logo"
+          src="./Z.png"
+        />
       </div>
 
-      <div className="relative flex items-center flex-1 max-w-xl mx-6">
+      <div className="relative flex items-center flex-1 mx-4 sm:mx-6 max-w-full sm:max-w-xl">
         <input
           type="text"
           placeholder="Search"
-          className="flex-1 px-4 py-2 rounded-l-full bg-neutral-900 border border-neutral-700 focus:outline-none text-white"
+          className="w-full px-4 py-2 rounded-l-full bg-neutral-900 border border-neutral-700 focus:outline-none text-white text-sm"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSearch()} // ✅ Search on Enter
+          onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         />
         <button
           onClick={handleSearch}
@@ -89,7 +89,7 @@ const Head = () => {
 
       <div>
         <img className="w-8 h-8 rounded-full cursor-pointer" alt="user"
-          src="https://cdn-icons-png.flaticon.com/512/219/219988.png" />
+          src="./user.png" />
       </div>
     </div>
   );
