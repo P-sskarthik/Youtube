@@ -12,7 +12,7 @@ const WatchPage = () => {
   }, [videoId]);
 
   return (
-    <div className="flex bg-black text-white min-h-screen pt-5 px-4 gap-6">
+    <div className="flex bg-black text-white min-h-screen pt-1 px-4 gap-6">
       {/* Main video and comments */}
       <div className="flex-[3]">
         <div className="aspect-video w-full">
