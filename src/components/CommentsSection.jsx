@@ -45,7 +45,7 @@ const CommentsSection = () => {
   const videoId = searchParams.get('v');
 
   useEffect(() => {
-    setComments(getRandomComments(60)); // Generate 60 comments
+    setComments(getRandomComments(60)); 
   }, [videoId]);
 
   return (

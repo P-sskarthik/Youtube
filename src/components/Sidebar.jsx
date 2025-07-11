@@ -27,7 +27,7 @@ const Sidebar = () => {
       <div className="space-y-2">
         <div
           className="flex items-center gap-4 p-2 rounded-lg hover:bg-neutral-800 cursor-pointer"
-          onClick={() => navigate('/')} // ✅ Go to home
+          onClick={() => navigate('/')} 
         >
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxXTuxRJzWsUA0uiZKT-_79osm34J9fwZ9A&s"
@@ -40,7 +40,7 @@ const Sidebar = () => {
 
       <hr className="border-neutral-700" />
 
-      {/* Quick Category Filters */}
+      
       <div className="space-y-2">
         <h2 className="text-sm text-neutral-400">Explore</h2>
         {contentCategories.map(({ label, icon }) => (
@@ -57,7 +57,7 @@ const Sidebar = () => {
 
       <hr className="border-neutral-700" />
 
-      {/* Subscriptions */}
+    
       <div className="space-y-2">
         <h2 className="text-sm text-neutral-400">Subscriptions</h2>
         {['Sports', 'Tech', 'News', 'Adventures'].map((name, i) => (
